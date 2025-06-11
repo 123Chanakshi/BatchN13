@@ -1,0 +1,577 @@
+Operator in java
+--Relational Operator : <,>,<=,>=
+--Logical Operator : &&,||
+--Unary Operator/ Increment Decrement Operator :  ++ ,-- 
+--Assignment Operator : +=,-=,/=,*=  a+=b : a = a+b
+--Ternary Operator : (Condition) ?  true: false
+--Equality Operator : a==b, a!=b return true or false
+--Bitwise Operator : 
+* Positive Number(~2) = number + 1 = (-ve result) 
+* Negative Number(-3) = number(Only number not sign) -1 = (+ve result)
+
+
+Basic :-
+
+Package Project;
+Public class OperatorCls{ //class creation
+int a= 3,b=5;
+public void show(){ // method
+int c= a+b;
+System.out.println("Show result : " +c);
+}
+public static void main(String[] args){
+
+
+OperatorCls cls = new OperatorCls(); // object creation
+cls.show(); 
+ new OperatorCls().show(); // we can also called like that 
+}
+
+OperatorCls cls // Referance Variable
+
+
+Basic Scanner Program  :-
+
+package project;
+import java.util.Scanner;
+public class CharacterCls{
+public static void main(String[] args) {
+Scanner sc= new Scanner(System.in);
+System.out.println("enter character");
+char ch = sc.next().charAt(0);
+if((ch =='a')||(ch=='e')||(ch=='i')||(ch=='o')||(ch=='u') ) {
+System.out.println("It is vowel ");
+}else {
+System.out.println("It is consonant");
+}
+}	
+}                      
+
+Conditional Statement :- 
+1. if else
+   if(condition){..}
+   else{..}
+2. Nasted if_else
+   if(Condition){..}
+   elseif{...}
+   elseif{...}
+   else{..}
+3. for
+   for(initialize ; condition ; increment/decrement) {  //body
+    }   for(int i=1; i<=10; i++){..}
+4. for each
+   for(int a : totalCount){  
+   Syso(a);
+   }
+5. while loop
+   while() {...}
+6. do_while
+   do{...}
+   while(condition);
+7. while_do
+8. switch(){
+   case 1:
+   break;
+   case 2;
+   break;
+   default:
+   }
+
+.......................................................................................
+
+Package - -2types - predefine and User_define 
+import - import statement 
+
+
+**OOPS Concept**
+
+-- 4 Pillar of java Inheritance , Abstraction , Encapsulation , Polymorphism
+
+# Inheritance 
+-- in Inheritance one class is allowed to inherit the property of another class.
+-- it means creating new class based on existing class.
+-- parent class and child class
+-- super class and sub class
+class a{ .. }
+class b extents a{ .. }
+-- keyword for inheritance :- extends , implements
+
+# Types of Inheritance
+1. Single Inheritance 
+  class A {}
+  class B extends A{}
+-- Single sub class derive from only one super class 
+
+2. Multilevel Inheritance
+  class A {}
+  class B extends A{}
+  class C extends B{}
+-- derive class inherit a base class and as well as the derived class also act as a base class for another class
+
+3. Multiple Inheritance 
+  class B {}
+  class C {}
+  class A extends B,C{}
+-- In case of multiple inheritance not allow In java but in case of interface
+
+
+
+ it is allowed.
+
+4. Hybrid Inheritance 
+ class A extends B{}
+ class B extends A{}
+ class C extends A{}
+-- In hybrid/Cyclic inheritance not allowed in both class and interface
+
+
+# Dynamic Dispatch 
+-- child Class is assign to parent class 
+-- sub class is assign to super class
+-- But parent class is not assign to child class
+Ex : InheritanceCls super = new InheritanceTest();
+-- In Dynamic dispatch when method call display the common method of child class always.
+
+.......................................................................................
+
+# Encapsulation 
+
+-- limited access.
+-- binding data into a single entity/Unit
+-- private access specifier
+-- but if we want to access those private member then we need to create a GETTER and SETTER
+-- GET and SET method should be public.
+-- if we declare private member within a class then we can access it within a class only. (we cannot access outside a class )
+
+.........................................................................................
+
+# Polymorphism 
+
+-- Its means message to be display in more than one form 
+Types : Compile Time and Run time 
+
+# Method Overloading 
+-- Compile time Polymorphism 
+-- Within a same class/ same method name
+-- While Method overloading must have to follow some rules:
+-- some have same method name
+-- parameter sequence change 
+-- no. of parameter change
+-- type of parameter change(int, String)
+
+# Method Overriding
+-- runtime Polymorphism 
+-- within 2 or more classes(not a single class)
+-- method name should be same(but in diff class)
+-- Return type must be same
+-- parameter also must be same 
+-- have to used same method with same signature
+
+..........................................................................................
+
+# Abstraction
+-- If we want to hide implementation then need to used abstract.
+-- Abstract is a keyword in java (method or class) not for variable 
+-- If we want to declare as a abstract then we need to write abstract keyword before method.
+-- Normal class can have only normal method.
+-- Abstract class can have both method.(abstract and normal method)
+-- If we declare a method as abstract then class is also declared as abstract.
+-- abstract class A{
+   void m1(){..}
+   void m2(){..}
+   void m3(){..}
+   abstract m4();  }
+   class B extends A{
+   m4(){} }
+
+.............................................................................................
+
+# Interface 
+-- no main method.
+-- Used for achieve abstraction and inheritance.
+-- It is like a class But don't have Constructor.
+-- All variable by default always public, static, final 
+-- All method by default public and abstract.
+-- Cannot create a object of Interface.
+-- Using Implements keyword we can connect interface with class.
+-- we can create reference variable of interface.
+-- Multiple inheritance allow in case of interface. 
+
+-- class extends class
+-- class implements interface
+-- interface extends interface
+-- class implements I1,I2{}
+
+..............................................................................................
+ Local Variable : Inside a method 
+ Global variable/Instance variable : Inside a class 
+
+# Static Keyword 
+-- Static is a keyword in java 
+-- One copy Storage
+-- Cannot create local variable as a static.
+-- Only methods ,block ,variables are static not a class.
+-- Static method can access only static method.
+-- Non Static access both static and non static member (non static variable not allowed inside static method)
+-- if apply static member then we no need to create object.
+-- we can directly call static member with class name.
+Eg : ClassName.MethodName();
+
+
+
+...............................................................................................
+
+
+# Final 
+-- It is a keyword in java 
+-- variable , method, class --- final 
+-- Final variable: we cannot reassign value / cannot change the value . 
+-- Final method: We cannot override 
+-- Final class: we cannot inherit that class
+-- Final variable always write in Capital letter 
+-- Final variable must be initialize. 
+
+.....................................................................................................
+
+24 March 
+
+# Constructor  
+-- to initialize objects by assigning initial values to their instance variables when a new object is created
+-- Same name as class name. 
+-- Constructor doesn't have return type. 
+-- Types : default constructor and parametrise constructor 
+-- No need to write explicitly default constructor 
+-- But parameterise const must to write explicitly in our program. 
+-- Abc obj = new Abc(); // Object  creation 
+-- when we create object of class , default Constructor will automatically called 
+-- if we write Parameterise const in our program then we need to write same type of parameter values inside const.(in object creation line )
+-- if we given both Constructor in our program then only parameterise constructor will called. 
+-- Constructor Overloading is possible.
+-- we can define same name of constructor multiple time by changing parameter. 
+-- Constructor overriding is not possible.
+
+67
+class Abc{
+void abc(){} // normal method 
+abc(){} // default constructor 
+abc(int a){} // parameterise constructor. 
+
+...................................................................................................................
+
+26 March 
+
+# Super 
+-- It is a keyword . 
+-- Refer to super class Constructor (used in sub class) 
+-- we can access method , variable, and constructor of super class from sub class.
+-- have to define like super.var , super.methodName , super() .
+-- It should be first line of constructor 
+
+
+
+# This 
+-- used to identify the difference between local and global variable . 
+-- it is a keyword . 
+-- it refers to current class constructor . 
+-- can differentiate local and instance variable. 
+-- It should be first line of constructor 
+
+......................................................................................................................
+
+27 March 
+
+# String 
+-- it is from java.lang package 
+-- data type and also it is a class. 
+int float, Boolean .. only data type not class 
+-- String as data type use in Double "valueOfString" 
+-- length using .length() 
+
+. eg. = valueOfString.length()
+-- Always starting index is 0 , end index is Length-1 . 
+-- String is immutable(we cannot change the value of String)
+-- methods  charAt(), length(), replace(), concat(), tolowercase() , touppercase(), contains() 
+
+........................................................................................................................
+
+1 April 
+
+# StringBuilder/ StringBuffer
+
+-- it is mutable(we can change the value of String)
+-- here we have reverse() to reverse the string 
+-- no need to store new string value in new variable 
+append()
+insert()
+reverse()
+replace()
+check difference between String and StringBuilder/ StringBuffer 
+
+.................................................................................................................
+
+2 April
+
+# collection 
+List : 
+-- duplicates allowed 
+-- we can add elements using add() 
+-- null allowed
+
+
+a. Arraylist : 
+-- duplicates allowed 
+-- we can add elements using add()
+-- null allowed
+-- As per requirement Arraylist size can be grow and shrink. 
+-- under java.util package 
+-- Arraylist maintained order of elements. 
+
+b. linked list 
+-- duplicates allowed
+-- null allowed 
+e
+
+Collection       2.Set                3. Map 
+1. list          a. Hashset           a. hashmap
+a. arraylist        b. Linkedhashset     b. linkedhashmap
+b. linkedlist                             c.tree map
+c. vector 
+
+........................................................................................................................
+
+3 April 
+# Array 
+Two types  1 Dimensional and 2 Dimensional 
+-- size fixed
+-- can check length of array with length 
+declaration of array...
+int a [] = {1,2,2,6}
+int a [] = new a[3];
+a[0] = 2
+a[1] = 3
+...............
+
+Size or length 
+Arraylist = .size()
+String = .length()
+Array = length 
+................
+
+# 2 Dimensional Array
+-- row and column 
+int a[R][C] = {{2,3,4,5},{2,3,4,5},{2,3,4,5}}
+..........................................................................................................................
+
+4 April 
+# Set
+--duplicate not allowed 
+--null allowed-
+
+
+
+a. HashSet :
+-- class
+-- duplicate not allowed
+-- null allowed
+-- hm implements set
+-- we can add elements using add()
+--unordered
+
+................................................................................................
+
+7 April 
+# Map 
+-- Interface 
+-- value store in the form of key-value pair 
+-- null key , null value  allowed 
+
+
+a. HashMap
+-- value store in the form of key-value pair 
+-- null key allowed
+-- null value allowed
+-- key is always unique 
+-- to add data in hashmap used put()
+-- duplicated value allowed 
+HashMap<K,V>
+HashMap<String,String>
+hm.put(1,"A") 
+hm.put(2,"C")
+hm.put(1,"C")
+
+-- keyset() : will store all keys 
+-- get() : will fetch value corresponding key
+-- values() : will store all values 
+-- EntrySet() : will store all keys and values
+
+
+....................................................................................................
+
+8 April 
+
+# Tree Map
+-- null value allowed 
+-- null key not allowed 
+-- Duplicated key not allowed 
+-- Duplicated value allowed 
+
+.....................................................................................................
+
+9 April 
+# Exception Handling 
+ 
+                                    ...Exception ......types .....Checked Exception , Unchecked Exception 
+Object ......... Throwable .........
+                                    ...Error 
+ 
+
+-- unexpected condition/event met while execution of program called as exception 
+-- if we get exception then that time our program will not execute.
+-- we have to handle those exception using try_catch block 
+-- there should be always catch below the try .
+
+__________________
+
+Statement1
+Statement2
+try{
+Statement3.......problem : exception 
+}catch(){}
+Statement4
+Statement5
+______________________
+
+-- try_catch
+try{
+//code
+}catch(Exception e ){
+Sop()
+}
+
+_______________________
+try{}
+catch(){}
+catch(){}
+catch(){}
+______________________
+
+--Exception type 
+
+# Checked Exception 
+-- Compiletime exception 
+-- cannot solve by programmer 
+-- need to handle using try catch block or throes keyword
+
+# Unchecked Exception 
+-- runtime exception , can solve by programmer 
+-- no need to handle using try catch block or throws keyword w
+
+
+-- Throws and throw :
+# Throws : define at method level, implicitly(automatically)
+# throw : explicitly and inside the method 
+
+
+ Difference between Checked and unchecked
+
+# Checked 
+-- Checked exceptions occur during compile time when the source code is being converted into an executable code.
+-- The compiler checks the checked exception.
+-- This type of exception is considered as a subclass of the exception class.
+Example : IOException , SQLException ,FileNotFoundException , ClassNotFoundException
+
+# Unchecked
+-- Unchecked exceptions occur during runtime when the program is in execution.
+-- The compiler does not check these types of exceptions.
+-- Unchecked exceptions occur during runtime, therefore, they are not included in the exception class.
+Example : ArithmeticException , IllegalArgumentException ,ClassCastException ,ArrayIndexOutOfBoundsException 
+
+array and Arraylist  difference
+
+# Array 
+-- Fixed size
+-- Can be multidimensional
+-- A bit faster than ArrayList
+-- Check size of Array using  = length  property 
+
+
+# ArrayList
+-- Dynamic size
+-- Single-dimensional
+-- A bit slower than Array
+-- check size of Arraylist = .size()
+
+...............................................................................................
+
+10 April 
+
+# File IO 
+
+File
+FileInputStream
+FileOutputStream
+
+................................................................................................
+14 April 
+
+# Multi threading 
+
+-- It is a process to execute multiple thread at same time without any dependancies.
+-- it will save our time
+-- increase execution performance 
+How to achieve multithreading :
+-- By Extending thread class
+-- run(), start() 
+
+-- By implementing runnable interface 
+-- no Start()
+-- run() 
+_____________________________________________________
+
+-- Use run() to write your logical code
+-- Use Start() to call your logic from run()
+
+______________________________________________________
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+About my self include :- 
+
+name 
+education 
+project 
+family 
+current work 
+Strength 
+hobby 
