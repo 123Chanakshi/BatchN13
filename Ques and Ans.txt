@@ -1,0 +1,319 @@
+                                  ## OOPS Concept ##
+
+1. What are the main Principles of OOP?
+-- The four main principles of Object-Oriented Programming (OOP) are Encapsulation, Abstraction, Inheritance, and Polymorphism. These principles allow developers to create organized, reusable, and maintainable code. 
+
+2. What is Encapsulation ? 
+-- limited access.
+-- binding data into a single entity/Unit
+-- private access specifier
+-- but if we want to access those private member then we need to create a GETTER and SETTER
+-- GET and SET method should be public.
+-- if we declare private member within a class then we can access it within a class only. (we cannot access outside a class )
+
+3. What is Inheritance ?
+-- in Inheritance one class is allowed to inherit the property of another class.
+-- it means creating new class based on existing class.
+-- parent class and child class
+-- super class and sub class
+
+4. What is Polymorphism ? 
+Its means message to be display in more than one form 
+Types : Compile Time and Run time 
+
+5. What is abstraction ? 
+ If we want to hide implementation then need to used abstract.
+-- Abstract is a keyword in java (method or class) not for variable 
+-- If we want to declare as a abstract then we need to write abstract keyword before method.
+-- Normal class can have only normal method.
+-- Abstract class can have both method.(abstract and normal method)
+-- If we declare a method as abstract then class is also declared as abstract.
+
+                                 ## Final and Static Keyword ##
+
+6. What is use of final keyword in java ?
+-- Final key word is used to apply restrictions on classes, methods, and variables.
+-- Final variable: we cannot reassign value / cannot change the value . 
+-- Final method: We cannot override 
+-- Final class: we cannot inherit that class
+
+7. What is use of Static keyword in java ?
+-- The static keyword in Java is mainly used for memory management.
+-- The static keyword in Java is used to share the same variable or method of a given class.
+
+8. Can a method be both static and final ?
+-- Yes, a method can be both static and final in Java.
+
+Explanation:
+static means the method belongs to the class, not instances of the class. It can be called without creating an object.
+
+final means the method cannot be overridden by subclasses.
+
+
+                                     ## String ##
+
+9. what is Difference between string and string buffer ? 
+
+-- A string is immutable, meaning once a String object is created, it cannot be altered? change 
+-- a StringBuffer is mutable, allowing modifications like additions, deletions, and alterations without creating new objects each time
+
+10. Why String is immutable in java ?
+
+-- String Pool: Java stores string literals in a pool to save memory. Immutability ensures one reference does not change the value for others pointing to the same string.
+-- Security: Strings are used for sensitive data like usernames and passwords. Immutability prevents attackers from altering the values.
+-- Thread Safety: Since string values cannot be changed, they are automatically thread-safe, means multiple threads can safely use the same string.
+-- Efficiency: The JVM reuses strings in the String Pool by improving memory usage and performance.
+
+11. How can you create a String object ?
+
+You can create a String object using the new keyword and the String constructor 
+e.g., String s = new String("Hello");
+
+
+                           ## StringBuffer and StringBuilder ## 
+ 
+12. What is difference between StringBuffer and StringBuilder ? 
+-- StringBuffer is synchronized. This means that multiple threads cannot call the methods of StringBuffer simultaneously.
+
+-- StringBuilder is asynchronized. This means that multiple threads can call the methods of StringBuilder simultaneously.
+-- StringBuffer is lot slower than StringBuilder.
+
+-- StringBuilder is a lot faster than StringBuffer
+
+-- Use in multi-threaded environments.
+
+-- Use in single-threaded or non-concurrent environments.
+
+13. When Should You used StringBuilder over StringBuffer ?
+-- If a string can change and will be accessed from multiple threads, use a StringBuffer because StringBuffer is synchronous, so you have thread-safety. If you don't want thread-safety than you can also go with StringBuilder class as it is not synchronized.
+
+14. Can You convert a StringBuilder to String ?
+-- You must call the ToString method to convert the StringBuilder object to a String object 
+
+                              ## OOPS Concept ## 
+
+15. What is Difference between class and object ?
+
+a class is a blueprint or template for creating objects. It defines the structure and behavior of those objects. An object, on the other hand, is a specific instance of a class, with its own unique data and behavior. 
+
+16. What is Method Overloading ?
+-- Compile time Polymorphism 
+-- Within a same class/ same method name
+-- While Method overloading must have to follow some rules:
+-- some have same method name
+-- parameter sequence change 
+-- no. of parameter change
+-- type of parameter change(int, String)
+
+17. What is Method Overriding ?
+-- runtime Polymorphism 
+-- within 2 or more classes(not a single class)
+-- method name should be same(but in diff class)
+-- Return type must be same
+-- parameter also must be same 
+-- have to used same method with same signature
+
+18. Can a class implement multiple interface ?
+-- Yes, Class can implements multiple Interface but class can only inherit from single class. 
+
+19. What is Constructor Overloading ?
+-- we can define same name of constructor multiple time by changing parameter. 
+
+                            ## Final and Static Keyword ##
+
+20. Can final Method be inherited ?
+-- Yes, a final method can be inherited in Java, but it cannot be overridden by subclasses
+
+21. Can we declared a constructor as final ?
+-- No, a constructor cannot be declared as final in Java. 
+
+22. What is a static block ?
+-- In Java, a static block (also called a static initialization block) is a code block within a class that is executed only once when the class is first loaded into memory by the Java Virtual Machine (JVM). 
+
+23. can static method access instance variables ?
+-- No, a static method cannot directly access instance variables or instance methods of a class.Static methods are associated with the class itself, not with individual instances of the class, so they don't have access to the unique state of an object. 
+
+
+                                ## String ##
+
+24. What is difference between " == " and equals() in String comparison ?
+-- == Operator:
+This operator compares the references of the string objects. It checks if two string variables point to the exact same object in memory. If they do, it returns true. If they are different objects, even if they contain the same characters, it returns false.
+-- .equals() Method:
+This method compares the content of the string objects. It checks if the sequence of characters within the two strings is identical. If the content is the same, it returns true, regardless of whether they are separate objects in memory.
+
+25. What is String Pool ?
+-- the String pool is a dedicated area in the heap memory where string literals are stored.
+
+26. Can we override the String class ?
+-- You can't override final classes, of which String is one. 
+
+                            ## StringBuffer and StringBuilder ## 
+
+27. Is StringBuilder thread-safe?
+No , StringBuilder is asynchronized.
+
+28. What are some common methods in StringBuffer ?
+-- append(), insert(), delete(), reverse() 
+
+29. Which is faster StringBuffer Or StringBuilder ? 
+-- StringBuilder 
+ 
+
+                            ## Arrays ##
+30. what is an array in java ?
+-- Arrays in Java are one of the most fundamental data structures that allow us to store multiple values of the same type in a single variable.
+
+31. How do You declare and initialize an array in java ?
+-- declaration of array...
+int a [] = {1,2,2,6}
+int a [] = new int[3];
+a[0] = 2
+a[1] = 3
+
+32. What is the default value of array elements in java?
+
+-- int, long, short, byte: The default value is 0.
+-- float, double: The default value is 0.0.
+-- char: The default value is the null character '\u0000'.
+-- For any object type (e.g., String, custom classes): The default value is null.
+
+33. Can we Change the size of an array after declaration?
+
+-- You are not able to change the size of the array after creation.
+ Because the Array size is fixed
+
+34. How can we Find the length of an arrays?
+-- By using the length property we can find the length of arrays 
+
+                        ## Programming Question ## 
+
+35. Write a program to reverse a string in java . 
+package String;
+
+public class ReverseString {
+
+	public static void main(String[] args) {
+		String str = "This";
+		String rev = "";
+		int sizeOfString= str.length();
+		for(int i = sizeOfString-1;i>=0;i--) {
+			rev= rev + str.charAt(i);
+			
+		}
+		System.out.println("reverse String is :" + rev);
+	}
+}
+
+
+36 . Write a Program to find the maximum number in an array 
+
+package task;
+
+
+public class ExampleError{
+	static int arr[] = {23,34,56,74,89,29};
+	
+	public static int max() { 
+		int max = arr[0];
+	     for (int i = 0 ; i <= arr.length-1; i++) {
+	    	 if (arr[i] > max) 
+	    		 max = arr[i];
+	    	 
+	     }		
+	     
+	     return max;
+	}
+	 public static void main(String[] args) {
+		 System.out.println(max());
+	 }
+	
+}
+
+...........................
+
+package task;
+
+import java.util.Arrays;
+
+public class ExampleError{
+	
+	 public static void main(String[] args) {
+		 int arr[] = {3,67,84,56,34,2,5,76};
+		 
+		 Arrays.sort(arr);
+		 for(int i= 0 ;i <= arr.length-1; i++) {     
+	    	 System.out.println("Elements from index "+i+" is :" + arr[i]);
+	    }
+		 
+		 System.out.println("largest ele is " + arr[arr.length-1]);
+	 }	  
+	 
+	 
+}
+ 
+37. Write a program to check if a number is prime 
+package task;
+import java.util.Scanner;
+public class Prime_no {
+	 static boolean isPrime(int n) {
+	        if (n <= 1)
+	            return false;
+	     
+	        for (int i = 2; i < n; i++) {
+	            if (n % i == 0) {
+	            	return false;
+	                }
+	        }
+	        return true;
+	    }
+	    public static void main(String[] args){
+	    	 Scanner sc = new Scanner(System.in);
+	         System.out.println("Enter the number to check ");
+	       	  int num = sc.nextInt();
+	   
+	        if (isPrime(num))
+	            System.out.println("It is Prime");
+	        else
+	            System.out.println("Not Prime");
+	      
+	    }
+	}
+
+
+
+38. write a program to find factorial of a number 
+package task;
+
+class ExampleError{
+     public void factorial(int n){
+    	 int res = 1;
+    	 for (int i = 2; i <= n; i++) {
+             res *= i;
+    	 }
+    	 System.out.println(res);
+        
+     }
+    public static void main(String[] args) {
+    	ExampleError obj = new ExampleError();
+    	obj.factorial(3);
+    }
+}
+
+39. write a program to sort an array
+import java.util.Arrays;
+
+public class ExampleError{
+	
+	 public static void main(String[] args) {
+		 int arr[] = {3,67,84,56,34,2,5,76};
+		 
+		 Arrays.sort(arr);
+		 for(int i= 0 ;i <= arr.length-1; i++) {     
+	    	 System.out.println("Elements from index "+i+" is :" + arr[i]);
+	    }
+
+}
+}
+
+
